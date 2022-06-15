@@ -1,16 +1,16 @@
 const degrees = [
   {
-    school: 'Stanford University',
-    degree: 'M.S. Computational and Mathematical Engineering',
-    link: 'https://stanford.edu',
-    year: 2016,
+    school: 'Northern Arizona University',
+    degree: 'M.S. Computers and Informatics Science',
+    link: 'https://nau.edu/',
+    year: 2021,
   },
   {
-    school: 'University at Buffalo',
-    degree: 'B.S. Electrical Engineering, Computer Engineering',
-    link: 'https://buffalo.edu',
-    year: 2012,
+    school: 'SVECW',
+    degree: 'B.S. Computer Science and Engineering',
+    link: 'https://www.svecw.edu.in/',
+    year: 2018,
   },
-];
+]
 
-export default degrees;
+export default degrees
