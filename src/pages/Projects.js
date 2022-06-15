@@ -6,6 +6,10 @@ import Main from '../layouts/Main'
 import Cell from '../components/Projects/Cell'
 import data from '../data/projects'
 
+const onProjectClick = (e) => {
+  return <h4>e.target.value</h4>
+}
+
 const Projects = () => (
   <Main title="Projects" description="Learn about Akhila C'Kolla's projects.">
     <article className="post" id="projects">
@@ -18,7 +22,7 @@ const Projects = () => (
         </div>
       </header>
       {data.map((project) => (
-        <Cell data={project} key={project.title} />
+        <Cell data={project} key={project.title} onClick={onProjectClick} />
       ))}
     </article>
   </Main>
