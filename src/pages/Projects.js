@@ -7,6 +7,7 @@ import Cell from '../components/Projects/Cell'
 import data from '../data/projects'
 
 const onProjectClick = (e) => {
+  console.log('e.target value', e.target)
   return <h4>e.target.value</h4>
 }
 
