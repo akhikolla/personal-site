@@ -1,4 +1,29 @@
 const positions = [
+    {
+    company: 'Amazon.com Inc',
+    position: 'Senior Software Engineer',
+    link: 'https://amazon.com/',
+    daterange: 'Aug 2022 - Present',
+    points: [
+      'Designed and deployed publisher-side ad tech systems including ad servers, bidders, pacers, and ML-driven yield optimizers, boosting ad delivery efficiency and increasing publisher revenue by 20%. Built AI-powered identity graphs and integrated with DMPs to enable precise audience targeting across 1P and 3P segments - improving campaign reach and personalization by 25%.',
+      'Redesigned and developed a 1P Shopper Hub, achieving an 8.5% increase in units purchased, a 25% boost in engagement, and a 319% surge in conversion rates, with a 33% CTR during Prime Day 2024. Utilized technologies including Spring Boot, Java, AWS services like EC2, Lambda, OpenSearch, EKS, CloudWatch',
+      'Led front-end and back-end development for a centralized BWP orders page, resulting in a 20% reduction in customer service inquiries and a 10% increase in repeat purchases.',
+      'Led the migration to Amazon ad tags, improving data accuracy by 35% and boosting ad performance by 20%. This integration is projected to drive $12 million in ad revenue in 2024 and enhance the BWP value proposition for large SMBs and enterprises.'
+    ],
+  },
+      {
+    company: 'Verizon',
+    position: 'Senior Software Engineer',
+    link: 'https://verizon.com/',
+    daterange: 'Jan 2022 - July 2022',
+    points: [
+      'Developed a specialized application at Verizon to assess user eligibility for promotions and identify suitable offers for the North American market, resulting in a 30% reduction in processing time.',
+      'Designed and implemented region-specific configurations and an in-app notification system using React (frontend) and Node.js/Express.js (backend), improving promotional offer accuracy by 15%.',
+      'Boosted customer engagement by 20% and increased promotional offer redemption rates by 10% through targeted alerts, utilizing RESTful APIs, SQL/NoSQL databases, and Git for version control.'
+    ],
+  },
+
+  
   {
     company: 'Northern Arizona University,',
     position: 'Graduate Research Assistant, G.R.A.',
