@@ -22,8 +22,6 @@ const positions = [
       'Boosted customer engagement by 20% and increased promotional offer redemption rates by 10% through targeted alerts, utilizing RESTful APIs, SQL/NoSQL databases, and Git for version control.'
     ],
   },
-
-  
   {
     company: 'Northern Arizona University,',
     position: 'Graduate Research Assistant, G.R.A.',

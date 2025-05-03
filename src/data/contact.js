@@ -25,7 +25,7 @@ const data = [
     icon: faInstagram,
   },
   {
-    link: '',
+    link: 'https://www.linkedin.com/in/akhikolla/',
     label: 'LinkedIn',
     icon: faLinkedinIn,
   },
@@ -35,7 +35,7 @@ const data = [
     icon: faAngellist,
   },
   {
-    link: 'mailto:akhila.c.kolla@gmail.com',
+    link: 'mailto:akhilakolla5@gmail.com',
     label: 'Email',
     icon: faEnvelope,
   },
