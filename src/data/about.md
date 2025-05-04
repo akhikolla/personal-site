@@ -1,6 +1,6 @@
 # Travel / Geography
 
-- I am from originally from Guntur, Andhrapradesh, INDIA. I have since lived in Bhimavaram, Chennai, Mysore, Banglore, and Hyderabad.
+- I am originally from Guntur, Andhra Pradesh, India. I have since lived in Bhimavaram, Chennai, Mysore, Banglore, and Hyderabad.
 - I've been to ~ 2 countries, I wish to visit more countries may be with a company.
 - From 2014-2018, I was in Bhimavaram.
 - In 2018, I visited: Mysore, Banglore.
