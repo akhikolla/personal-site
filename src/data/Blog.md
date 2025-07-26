@@ -391,3 +391,27 @@ class Solution:
             stack.append(i)
         return nextGreaterTemparatures
 ```
+
+## Generate Parentheses
+
+> [link](https://leetcode.com/problems/generate-parentheses/description/?envType=company&envId=netflix&favoriteSlug=netflix-all)
+
+```
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        valid_parentheses = []
+
+        def generateParenthesis(open_count, close_count, cur):
+            if len(cur) == 2*n:
+                valid_parentheses.append(cur)
+                return cur
+
+            if open_count < n:
+                generateParenthesis(open_count+1, close_count, cur + '(')
+
+            if close_count < open_count :
+                generateParenthesis(open_count, close_count + 1, cur + ')')
+
+        generateParenthesis(0,0, '')
+        return valid_parentheses
+```
