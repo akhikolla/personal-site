@@ -456,3 +456,171 @@ class MyQueue:
 # param_3 = obj.peek()
 # param_4 = obj.empty()
 ```
+
+### Python Syntax:
+
+#### Lists
+
+```
+arr = []
+arr = list()
+
+arr.append(x)
+arr.pop()
+arr.pop(i)
+arr.insert(i, x)
+arr.remove(x)
+x in arr
+
+arr.sort() #In place sort, O(nlogn)
+sorted(arr) #returns sorted list O(nlogn)
+arr.reverse() # In place reverse
+```
+
+#### Dictionary(HashMap)
+
+```
+d = {}
+d = dict()
+
+d[key] = value
+d.get(key, default) # get with default if the key is missing, O(1)
+del d[key] # delete key value pair
+key in d
+d.keys() # get keys view
+d.values() # get values view
+d.items()  # get key value pairs view
+d.pop(key) # remove and return the value
+```
+
+#### Set(HashSet)
+
+```
+s = set()
+s = {1,2,3}
+
+s.add(x)
+s.remove(x)
+s.discard(x)
+x in s
+s1 | s2 # Union
+s1 & s2 # Intersection
+s1 - s2 # difference
+```
+
+#### Queue
+
+```
+from collections import deque
+
+q = deque()
+
+q.append(x) // add to right
+q.appendLeft(x) // add to left
+q.pop() // pops right element
+q.popLeft() // pops left element
+```
+
+#### Stack
+
+```
+stack = []
+stack.append(x)
+stack.pop()
+stack[-1] // peeks top element in stack
+```
+
+#### Heap
+
+```
+import heapq
+
+heap = []
+heapq.heapify(list) // converts list to heap
+
+heapq.heappush(heap, x) // add element O(log n)
+heapq.heappop(heap) // remove and return smallest O(log n)
+heap[0] // peek smallest O(1)
+heapq.nlargest(k, heap) # Get k largest elements O(nlogk)
+heapq.nsmallest(k, heap) # Get k smallest elements O(nlogk)
+
+// for max queue negate values when pushing or popping
+
+```
+
+#### LinkedList
+
+```
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+head = ListNode(1)
+head.next = ListNode(2)
+temp = head.next
+head.next = temp.next
+```
+
+#### Tree
+
+```
+class TreeNode:
+    def __init(self, val=0, left=None, right=None):
+        self.val = val
+        self.right = right
+        self.left = left
+
+// Binary search tree operations average O(logn), worst O(n)
+```
+
+#### Graphs
+
+```
+// Adjacency list
+
+graph = defaultdict(list)
+graph = {0 : [1,2], 1:[2], 2: []}
+
+graph = [[0,1,1], [0,0,1], [0,0,0]]
+```
+
+#### Trie
+
+```
+class TrieNode:
+    def __init__(self):
+        self.children = []
+        self.is_end = False
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+
+    def insert(self, word:str) -> None: O(m), m words
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+        node.is_end = True
+```
+
+#### Common Built-in functions
+
+```
+# Sorting
+sorted(iterable)
+reversed(iterable)
+
+min(iterable)
+max(iterable)
+
+sum(iterable)
+
+[x for x in range(10)] // create list from expression
+
+s.split() // splits string into list
+''.join(list) // join list elements into string
+
+```
