@@ -17,10 +17,7 @@ import { skills, categories } from '../data/resume/skills'
 const sections = ['Education', 'Experience', 'Skills', 'Courses', 'References']
 
 const Resume = () => (
-  <Main
-    title="Resume"
-    description="Akhila C'Kolla's Resume. Arthena, Matroid, YC, Skeptical Investments, Stanford ICME, Planet Labs, and Facebook."
-  >
+  <Main title="Resume" description="Akhila C'Kolla's Resume.">
     <article className="post" id="resume">
       <header>
         <div className="title">

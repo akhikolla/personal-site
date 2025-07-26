@@ -12,6 +12,7 @@ const About = lazy(() => import('./pages/About'))
 const Index = lazy(() => import('./pages/Index'))
 const Projects = lazy(() => import('./pages/Projects'))
 const Resume = lazy(() => import('./pages/Resume'))
+const Blog = lazy(() => import('./pages/Blog'))
 
 const App = () => (
   <BrowserRouter basename={PUBLIC_URL}>
@@ -21,7 +22,8 @@ const App = () => (
         <Route path="/about" component={About} />
         <Route path="/projects" component={Projects} />
         <Route path="/resume" component={Resume} />
-      </Switch> 
+        <Route path="/blog" component={Blog} />
+      </Switch>
     </Suspense>
   </BrowserRouter>
 )
