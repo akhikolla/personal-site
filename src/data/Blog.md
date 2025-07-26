@@ -43,6 +43,26 @@ class Solution:
             p-=1
 ```
 
+## Merge Intervals
+
+> [link](https://leetcode.com/problems/merge-intervals/description/)
+
+```
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals.sort(key = lambda i: i[0])
+        merged_intervals = [intervals[0]]
+
+        for start, end in intervals[1:]:
+            prevEnd = merged_intervals[-1][1]
+            if start <= prevEnd:
+                merged_intervals[-1][1] = max(prevEnd, end)
+            else:
+                merged_intervals.append([start,end])
+
+        return merged_intervals
+```
+
 ## Best Time to Buy and Sell Stock
 
 > [link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/?envType=company&envId=netflix&favoriteSlug=netflix-all)
