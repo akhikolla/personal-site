@@ -175,6 +175,42 @@ class Logger:
 # param_1 = obj.shouldPrintMessage(timestamp,message)
 ```
 
+## Time Based Key-Value Store
+
+> [link](https://leetcode.com/problems/time-based-key-value-store/description/?envType=company&envId=netflix&favoriteSlug=netflix-all)
+
+```
+class TimeMap:
+
+    def __init__(self):
+        self.timeMap = {}
+
+    def set(self, key: str, value: str, timestamp: int) -> None:
+        if key not in self.timeMap:
+            self.timeMap[key] = []
+        self.timeMap[key].append([value, timestamp])
+
+
+    def get(self, key: str, timestamp: int) -> str:
+        res = ""
+        values = self.timeMap.get(key, [])
+        l , r = 0, len(values) -1
+        while l <= r:
+            mid = (l + r) // 2
+            if values[mid][1] <= timestamp:
+                res = values[mid][0]
+                l = mid + 1
+            else:
+                r = mid - 1
+        return res 
+
+
+# Your TimeMap object will be instantiated and called as such:
+# obj = TimeMap()
+# obj.set(key,value,timestamp)
+# param_2 = obj.get(key,timestamp)
+```
+
 ## Longest Substring Without Repeating Characters
 
 > [link](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/?envType=company&envId=netflix&favoriteSlug=netflix-all)
