@@ -1,3 +1,64 @@
+## JSON Parse
+
+```
+def get_value_with_wildcard(data, key_path):
+    keys = key_path.lstrip('.').split('.')
+
+    def helper(current_data, remaining_keys):
+        if not remaining_keys:
+            return [current_data]
+
+        key = remaining_keys[0]
+        rest = remaining_keys[1:]
+        results = []
+
+        # Easy case — direct key
+        if key != '*':
+            if isinstance(current_data, dict):
+                if key in current_data:
+                    return helper(current_data[key], rest)
+                else:
+            return []  # Key not found or not a dict
+
+        # Wildcard case — '*' matches all keys at this level
+        else:
+            if isinstance(current_data, dict):
+                for sub_key, sub_val in current_data.items():
+                    results.extend(helper(sub_val, rest))
+
+            return results
+
+    final_results = helper(data, keys)
+
+    if not final_results:
+        return None
+    elif len(final_results) == 1:
+        return final_results[0]
+    else:
+        return final_results
+
+```
+
+### No \*
+
+```
+def get_value_easy(data, key_path):
+
+    keys = key_path.lstrip('.').split('.')
+    current_data = data
+    for key in keys:
+        if isinstance(current_data, dict):
+            if key in current_data:
+                current_data = current_data[key]
+            else:
+                return None
+        else:
+            return None
+
+    return current_data
+
+```
+
 ## Valid Parentheses
 
 > [link](https://leetcode.com/problems/valid-parentheses/?envType=company&envId=netflix&favoriteSlug=netflix-all)
