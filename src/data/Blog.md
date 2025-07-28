@@ -202,7 +202,7 @@ class TimeMap:
                 l = mid + 1
             else:
                 r = mid - 1
-        return res 
+        return res
 
 
 # Your TimeMap object will be instantiated and called as such:
@@ -333,6 +333,140 @@ class LRUCache:
 # obj = LRUCache(capacity)
 # param_1 = obj.get(key)
 # obj.put(key,value)
+```
+
+### Alternate approach
+
+```
+class ListNode:
+    def __init__(self, key=None, value=None):
+        self.key = key
+        self.value = value
+        self.prev = self.next= None
+
+class LRUCache:
+    def __init__(self, capacity: int):
+        self.cache = {}
+        self.capacity = capacity
+        self.lru_ptr = self.mru_ptr = ListNode()
+
+        self.lru_ptr.next = self.mru_ptr
+        self.mru_ptr.prev = self.lru_ptr
+
+    def remove(self, node):
+        prev, next = node.prev, node.next
+        prev.next, next.prev = next, prev
+
+    def insert(self, node):
+        prev, next = self.mru_ptr.prev, self.mru_ptr
+        prev.next = next.prev = node
+        node.prev, node.next = prev, next
+
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            self.remove(self.cache[key])
+            self.insert(self.cache[key])
+            return self.cache[key].value
+        return -1
+
+    def put(self, key: int, value: int) -> None:
+        if key in self.cache:
+            self.remove(self.cache[key])
+        self.cache[key] = ListNode(key, value)
+        self.insert(self.cache[key])
+
+        if(len(self.cache) > self.capacity):
+            lru = self.lru_ptr.next
+            self.remove(lru)
+            del self.cache[lru.key]
+
+
+
+
+
+# Your LRUCache object will be instantiated and called as such:
+# obj = LRUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
+```
+
+## Word Search
+
+> [link](https://leetcode.com/problems/word-search/description/?envType=company&envId=netflix&favoriteSlug=netflix-all)
+
+```
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        ROWS, COLS = len(board), len(board[0])
+        visited = set()
+
+        def dfs(row, col, i):
+            if i == len(word):
+                return True
+
+            if(row < 0 or col < 0
+            or row >= ROWS or col >= COLS
+            or word[i] != board[row][col]
+            or (row,col) in visited):
+                return False
+
+            visited.add((row,col))
+            res = (dfs(row+1, col, i+1) or
+                dfs(row-1, col, i+1) or
+                dfs(row, col+1, i+1) or
+                dfs(row, col-1, i+1))
+
+            visited.remove((row,col))
+            return res
+
+        for r in range(ROWS):
+            for c in range(COLS):
+                if(dfs(r, c, 0)):
+                    return True
+        return False
+
+```
+
+## Insert Delete GetRandom O(1)
+
+> [link](https://leetcode.com/problems/insert-delete-getrandom-o1/description/?envType=company&envId=netflix&favoriteSlug=netflix-all)
+
+```
+class RandomizedSet:
+
+    def __init__(self):
+        self.nmap = {}
+        self.nlist = []
+
+    def insert(self, val: int) -> bool:
+        res = val not in self.nmap
+        if res:
+            self.nmap[val] = len(self.nlist)
+            self.nlist.append(val)
+        return res
+
+    def remove(self, val: int) -> bool:
+        res = val in self.nmap
+        if res:
+            index = self.nmap[val]
+            lastVal = self.nlist[-1]
+
+            self.nlist[index] = lastVal
+            self.nlist.pop()
+
+            self.nmap[lastVal] = index
+            del self.nmap[val]
+        return res
+
+    def getRandom(self) -> int:
+       return random.choice(self.nlist)
+
+
+# Your RandomizedSet object will be instantiated and called as such:
+# obj = RandomizedSet()
+# param_1 = obj.insert(val)
+# param_2 = obj.remove(val)
+# param_3 = obj.getRandom()
 ```
 
 ## Rotate Array
