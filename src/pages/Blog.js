@@ -22,10 +22,17 @@ const Blog = () => (
       <header>
         <div className="title">
           <h2 data-testid="heading">
-            <Link to="/Blog">Blind75</Link>
+            <Link to="/Blog">Learn</Link>
           </h2>
         </div>
       </header>
+      <h2 style={{ color: 'green' }}>
+        <li>
+          <Link to="/SystemDesign">SystemDesign</Link>
+        </li>
+      </h2>
+
+      <br></br>
       <ReactMarkdown
         source={markdown}
         renderers={{

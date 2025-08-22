@@ -2,6 +2,8 @@ import React, { Suspense, lazy } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Main from './layouts/Main' // fallback for lazy pages
 import './static/css/main.scss' // All of our styles
+import BlankPage from './pages/BlankPage'
+import SystemDesign from './pages/SystemDesign'
 
 const { PUBLIC_URL } = process.env
 
@@ -23,6 +25,7 @@ const App = () => (
         <Route path="/projects" component={Projects} />
         <Route path="/resume" component={Resume} />
         <Route path="/blog" component={Blog} />
+        <Route path="/systemdesign" component={SystemDesign} />
       </Switch>
     </Suspense>
   </BrowserRouter>

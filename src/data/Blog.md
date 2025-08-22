@@ -39,7 +39,7 @@ def get_value_with_wildcard(data, key_path):
 
 ```
 
-### No \*
+### No with \*
 
 ```
 def get_value_easy(data, key_path):
