@@ -8,6 +8,31 @@ import raw from 'raw.macro'
 // Load markdown files
 const files = [
   {
+    title: 'Numbers To Know',
+    id: 'numbers-to-know',
+    markdown: raw('../data/systemdesign/numbertoknow.md'),
+  },
+  {
+    title: 'Scaling Reads',
+    id: 'scaling-reads',
+    markdown: raw('../data/systemdesign/scalingreads.md'),
+  },
+  {
+    title: 'Scaling Writes',
+    id: 'scaling-writes',
+    markdown: raw('../data/systemdesign/scalingwrites.md'),
+  },
+  {
+    title: 'Video Catalog System',
+    id: 'video-catalog',
+    markdown: raw('../data/systemdesign/netflix/videocatalog.md'),
+  },
+  {
+    title: 'Game leaderboard Topk',
+    id: 'game-leader-board',
+    markdown: raw('../data/systemdesign/netflix/leaderboardTopk.md'),
+  },
+  {
     title: 'Top K Problems',
     id: 'topk',
     markdown: raw('../data/systemdesign/topk.md'),
