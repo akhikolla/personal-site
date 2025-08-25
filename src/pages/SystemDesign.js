@@ -8,6 +8,11 @@ import raw from 'raw.macro'
 // Load markdown files
 const files = [
   {
+    title: 'Cheat sheet',
+    id: 'cheat-sheet',
+    markdown: raw('../data/systemdesign/cheat-sheet.md'),
+  },
+  {
     title: 'Numbers To Know',
     id: 'numbers-to-know',
     markdown: raw('../data/systemdesign/numbertoknow.md'),
